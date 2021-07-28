@@ -1,0 +1,55 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background: lightcoral;
+    text-align: center;
+    overflow-y: hidden;
+}
+
+.layer {
+    border: 3px solid #000;
+    height: 79vh;
+    overflow-y: unset;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    padding: 1.5rem;
+    background: #fff;
+    position: absolute;
+    bottom: -66%;
+    transition: all .5s ease-out;
+}
+
+.layer--active {
+    overflow-y: scroll;
+    bottom: 0;
+}
+
+.layer__icon--dots {
+    display: none;
+}
+
+.layer--active
+.layer__icon--dots {
+    display: block;
+}
+
+.layer--active 
+.layer__icon--chevron {
+    display: none;
+}
+
+.layer__title {
+    margin-bottom: .3rem;
+    padding: 0;
+}
+
+.layer__icon svg {
+    height: 3rem;
+    width: 3rem;
+    fill: #444;
+}
+
+.layer__paragraph {
+    text-align: start;
+    font-size: 1.25rem;
+}
