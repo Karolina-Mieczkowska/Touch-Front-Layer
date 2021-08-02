@@ -1,5 +1,8 @@
 const icon = document.querySelectorAll('.layer__icon svg');
+const layerSwipe = document.querySelector('.layer__swipe');
 const layer = document.querySelector('.layer');
+const listItem = document.querySelectorAll('.layer-nav__item');
+const layerParagraph = document.querySelectorAll('.layer__paragraph');
 
 const activateLayer = function() {
     layer.classList.toggle('layer--active')
@@ -22,20 +25,35 @@ const touchEnd = function() {
 };
 
 const touchMove = function() {
-    if (layer.classList.contains('layer--active')) {
-        isDragging = false;
-        console.log('contains')
-    } else {
-        isDragging = true;
-        console.log('not contains')
-    }
+    isDragging = true;
+    // if (layer.classList.contains('layer--active')) {
+    //     isDragging = false;
+    //     console.log('contains')
+    // } else {
+    //     isDragging = true;
+    //     console.log('not contains')
+    // }
 }
 
+layerSwipe.addEventListener('touchstart', touchStart);
+layerSwipe.addEventListener('touchend', touchEnd);
+layerSwipe.addEventListener('touchmove', touchMove);
 
+// DISPLAY MOVEMENTS
 
-layer.addEventListener('touchstart', touchStart);
-layer.addEventListener('touchend', touchEnd);
-layer.addEventListener('touchmove', touchMove);
+const displayParagraph = function() {
+    layerParagraph[i].classList.toggle('paragraph--active')
+}
+
+listItem.forEach(function(item, ind) {
+    item.addEventListener('click', function() {
+        if (item.classList.contains(!'layer-nav__item--active')) {
+            layerParagraph[ind].style.color = 'black';
+        } else {
+            layerParagraph[ind].style.color = 'red';
+        }
+    })
+})
 
 
 

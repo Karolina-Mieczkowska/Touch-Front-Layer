@@ -49,9 +49,25 @@ body {
     fill: #444;
 }
 
+/* PARAGRAPHS */
+
 .layer__paragraph {
     text-align: start;
     font-size: 1.25rem;
+    display: none;
+}
+
+.layer__paragraph--current {
+    color: midnightblue;
+    display: block;
+}
+
+.layer__paragraph--saving {
+    color: teal;
+}
+
+.layer__paragraph--currency {
+    color: tomato;
 }
 
 /* LAYER NAV */
