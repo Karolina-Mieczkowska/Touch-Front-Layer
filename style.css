@@ -53,3 +53,16 @@ body {
     text-align: start;
     font-size: 1.25rem;
 }
+
+/* LAYER NAV */
+
+.layer-nav {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.layer-nav__item--active {
+    color: teal;
+}

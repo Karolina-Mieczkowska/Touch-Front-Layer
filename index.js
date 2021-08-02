@@ -22,15 +22,25 @@ const touchEnd = function() {
 };
 
 const touchMove = function() {
-    isDragging = true;
+    if (layer.classList.contains('layer--active')) {
+        isDragging = false;
+        console.log('contains')
+    } else {
+        isDragging = true;
+        console.log('not contains')
+    }
 }
+
+
 
 layer.addEventListener('touchstart', touchStart);
 layer.addEventListener('touchend', touchEnd);
 layer.addEventListener('touchmove', touchMove);
 
 
-    
+
+
+
 
 
 
