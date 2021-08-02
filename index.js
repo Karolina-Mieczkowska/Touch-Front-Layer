@@ -12,15 +12,17 @@ icon.forEach(function(icon) {
 let isDragging = false;
 
 const touchStart = function() {
-    console.log('start');
+    isDragging = false;
 };
 
 const touchEnd = function() {
-    console.log('end');
+    if (isDragging) {
+        activateLayer();
+    }
 };
 
 const touchMove = function() {
-    console.log('move')
+    isDragging = true;
 }
 
 layer.addEventListener('touchstart', touchStart);

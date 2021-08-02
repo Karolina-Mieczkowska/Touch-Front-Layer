@@ -16,7 +16,7 @@ body {
     background: #fff;
     position: absolute;
     bottom: -66%;
-    transition: all .5s ease-out;
+    transition: all .5s ease-in;
 }
 
 .layer--active {
