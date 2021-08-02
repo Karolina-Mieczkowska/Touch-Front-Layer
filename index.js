@@ -41,16 +41,37 @@ layerSwipe.addEventListener('touchmove', touchMove);
 
 // DISPLAY MOVEMENTS
 
-const displayParagraph = function() {
-    layerParagraph[i].classList.toggle('paragraph--active')
-}
+// const displayParagraph = function() {
+//     layerParagraph[i].classList.toggle('paragraph--active')
+// }
+
+// listItem.forEach(function(item, ind) {
+//     item.addEventListener('click', function() {
+//         if (item.classList.contains(!'layer-nav__item--active')) {
+//             layerParagraph[ind].style.color = 'black';
+//         } else {
+//             layerParagraph[ind].style.color = 'red';
+//         }
+//     })
+// })
+
+let prevItems = [];
+let prevItemIndex;
 
 listItem.forEach(function(item, ind) {
     item.addEventListener('click', function() {
-        if (item.classList.contains(!'layer-nav__item--active')) {
-            layerParagraph[ind].style.color = 'black';
+
+        item.classList.add('layer-nav__item--active');
+        prevItems.push(ind)
+
+        if (prevItems.length > 1) {
+            prevItemIndex = prevItems[prevItems.length - 2];
         } else {
-            layerParagraph[ind].style.color = 'red';
+            prevItemIndex = 0;
+        }
+
+        if (item !== listItem[prevItemIndex]) {
+            listItem[prevItemIndex].classList.remove('layer-nav__item--active');
         }
     })
 })
