@@ -57,9 +57,12 @@ body {
     display: none;
 }
 
+.layer__paragraph--active {
+    display: block;
+}
+
 .layer__paragraph--current {
     color: midnightblue;
-    display: block;
 }
 
 .layer__paragraph--saving {

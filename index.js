@@ -63,6 +63,7 @@ listItem.forEach(function(item, ind) {
 
         item.classList.add('layer-nav__item--active');
         prevItems.push(ind)
+        layerParagraph[ind].classList.add('layer__paragraph--active');
 
         if (prevItems.length > 1) {
             prevItemIndex = prevItems[prevItems.length - 2];
@@ -72,6 +73,7 @@ listItem.forEach(function(item, ind) {
 
         if (item !== listItem[prevItemIndex]) {
             listItem[prevItemIndex].classList.remove('layer-nav__item--active');
+            layerParagraph[prevItemIndex].classList.remove('layer__paragraph--active');
         }
     })
 })
